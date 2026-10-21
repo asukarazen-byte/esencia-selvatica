@@ -1,0 +1,877 @@
+/* =====================================================
+   ESENCIA SELVÁTICA — EMPRESA
+   Diseño adaptado al HTML actualizado
+===================================================== */
+
+:root {
+    --verde-oscuro: #092b1a;
+    --verde: #176b3a;
+    --verde-medio: #2f8b4b;
+    --verde-claro: #79b85a;
+    --dorado: #d7ae3f;
+    --dorado-claro: #f5d978;
+    --crema: #fff8e7;
+    --blanco: #ffffff;
+    --gris: #66736a;
+    --borde: #176b3a20;
+    --sombra: 0 15px 40px #092b1a18;
+    --sombra-fuerte: 0 25px 60px #092b1a30;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--verde-oscuro);
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, #79b85a20, transparent 28%),
+        radial-gradient(circle at 90% 75%, #d7ae3f20, transparent 30%),
+        var(--crema);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =====================================================
+   NAVEGACIÓN PRINCIPAL
+===================================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 3%;
+    background: #fff8e7f5;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--borde);
+    box-shadow: 0 8px 25px #092b1a12;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 13px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    color: var(--verde-oscuro);
+    font-size: 12px;
+    font-weight: 700;
+    transition:
+        color .3s ease,
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--blanco);
+    background: linear-gradient(
+        135deg,
+        var(--verde),
+        var(--verde-medio)
+    );
+    box-shadow: 0 8px 20px #176b3a35;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* =====================================================
+   ENCABEZADO DE EMPRESA
+===================================================== */
+
+.page-header {
+    max-width: 1150px;
+    margin: auto;
+    padding: 75px 25px 65px;
+    text-align: center;
+    animation: entrada .8s ease both;
+}
+
+.tag {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #ad8520;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.tag::after {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 5px;
+    background: linear-gradient(
+        90deg,
+        var(--verde),
+        var(--dorado)
+    );
+}
+
+.page-header h1 {
+    margin-bottom: 23px;
+    font: normal clamp(38px, 6vw, 72px)/1.15 Georgia, "Times New Roman", serif;
+}
+
+.page-header h1 span {
+    display: block;
+    color: var(--verde);
+}
+
+.page-header > p {
+    max-width: 790px;
+    margin: auto;
+    color: var(--gris);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   IMAGEN PRINCIPAL DE LA EMPRESA
+===================================================== */
+
+.empresa-imagen {
+    position: relative;
+    height: clamp(280px, 42vw, 470px);
+    max-width: 1050px;
+    margin: 45px auto 0;
+    overflow: hidden;
+    border: 5px solid var(--blanco);
+    border-radius: 28px;
+    background: var(--verde-oscuro);
+    box-shadow: var(--sombra-fuerte);
+    isolation: isolate;
+}
+
+.empresa-imagen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 30%,
+        #092b1a20 50%,
+        #092b1aeb 100%
+    );
+    pointer-events: none;
+}
+
+.empresa-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.empresa-imagen:hover img {
+    transform: scale(1.045);
+}
+
+.imagen-texto {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 38px 42px;
+    color: var(--blanco);
+    text-align: left;
+}
+
+.imagen-texto span {
+    color: var(--dorado-claro);
+    font: bold clamp(23px, 4vw, 40px)/1.2 Georgia, serif;
+    letter-spacing: 3px;
+}
+
+.imagen-texto small {
+    color: #ffffffdf;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+/* =====================================================
+   CONTENIDO GENERAL
+===================================================== */
+
+.content {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 30px 100px;
+}
+
+/* =====================================================
+   UBICACIÓN, MISIÓN Y VISIÓN
+===================================================== */
+
+.split {
+    display: grid;
+    grid-template-columns: minmax(190px, .8fr) repeat(2, minmax(0, 1.25fr));
+    align-items: stretch;
+    gap: 25px;
+    margin-bottom: 90px;
+}
+
+/* BLOQUE DE UBICACIÓN */
+
+.split > div {
+    align-self: center;
+    padding: 28px 24px;
+    border-left: 4px solid var(--dorado);
+    border-radius: 0 18px 18px 0;
+    background: linear-gradient(
+        135deg,
+        #ffffffd9,
+        #f5ecd4a8
+    );
+}
+
+.split > div .tag {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.split > div .tag::after {
+    width: 42px;
+    margin: 8px 0 0;
+}
+
+.split > div p {
+    color: var(--verde);
+    font: bold 24px/1.4 Georgia, serif;
+}
+
+/* =====================================================
+   TARJETAS DE MISIÓN Y VISIÓN
+===================================================== */
+
+.card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    background: #ffffffed;
+    box-shadow: var(--sombra);
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #d7ae3f90;
+    box-shadow: var(--sombra-fuerte);
+}
+
+/* Imagen de las tarjetas */
+
+.image-box {
+    position: relative;
+    height: 215px;
+    overflow: hidden;
+    background: var(--verde-oscuro);
+}
+
+.image-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.card:hover .image-box img {
+    transform: scale(1.06);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 17px;
+    background: linear-gradient(
+        180deg,
+        #092b1a55,
+        transparent 55%
+    );
+}
+
+.image-overlay span {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #f5d978a0;
+    border-radius: 50%;
+    color: var(--dorado-claro);
+    background: #092b1ac9;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Texto de las tarjetas */
+
+.card-content {
+    padding: 27px 25px 30px;
+}
+
+.number {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 17px;
+    border-radius: 50%;
+    color: var(--blanco);
+    background: linear-gradient(
+        135deg,
+        var(--verde),
+        var(--verde-medio)
+    );
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 7px 16px #176b3a25;
+}
+
+.card-content h2 {
+    margin-bottom: 13px;
+    color: var(--verde);
+    font: normal 29px/1.3 Georgia, serif;
+}
+
+.card-content p {
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   TÍTULO DE LA SECCIÓN DE VALORES
+===================================================== */
+
+.section-heading {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading > span {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #ad8520;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+    color: var(--verde);
+    font: normal clamp(30px, 4vw, 46px)/1.2 Georgia, serif;
+}
+
+.section-heading p {
+    color: var(--gris);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   CUADRÍCULA DE VALORES
+===================================================== */
+
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.grid.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Tarjeta individual de valor */
+
+.value-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+}
+
+.value-card::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--verde),
+        var(--dorado),
+        var(--verde-claro)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+}
+
+.value-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Imágenes de valores */
+
+.value-image {
+    position: relative;
+    height: 205px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        var(--verde-oscuro),
+        var(--verde)
+    );
+}
+
+.value-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.value-card:hover .value-image img {
+    transform: scale(1.07);
+}
+
+.value-number {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #f5d978b0;
+    border-radius: 50%;
+    color: var(--dorado-claro);
+    background: #092b1ad9;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Texto de valores */
+
+.value-content {
+    flex: 1;
+    padding: 23px 20px 26px;
+}
+
+.value-content h3 {
+    margin-bottom: 11px;
+    color: var(--verde);
+    font: normal 23px/1.3 Georgia, serif;
+}
+
+.value-content p {
+    color: var(--gris);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =====================================================
+   PIE DE PÁGINA
+===================================================== */
+
+.footer {
+    position: relative;
+    color: var(--blanco);
+    background: linear-gradient(
+        135deg,
+        var(--verde-oscuro),
+        #0d4227,
+        var(--verde)
+    );
+}
+
+.footer::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--dorado),
+        var(--verde-claro),
+        var(--dorado-claro)
+    );
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    align-items: start;
+    gap: 45px;
+    max-width: 1250px;
+    margin: auto;
+    padding: 55px 30px 45px;
+}
+
+/* Marca del pie */
+
+.footer-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.footer-logo {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+    padding: 4px;
+    object-fit: contain;
+    border: 2px solid var(--dorado);
+    border-radius: 50%;
+    background: #ffffff0a;
+    transition: transform .35s ease;
+}
+
+.footer-logo:hover {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.footer-brand h3 {
+    margin-bottom: 12px;
+    color: var(--dorado-claro);
+    font: normal 24px/1.3 Georgia, serif;
+}
+
+.footer-brand p {
+    max-width: 320px;
+    color: #ffffffbd;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Enlaces del pie */
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.footer-section h4 {
+    width: 100%;
+    margin-bottom: 9px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #d7ae3f60;
+    color: var(--dorado-claro);
+    font: normal 20px Georgia, serif;
+}
+
+.footer-section a {
+    color: #ffffffc4;
+    font-size: 13px;
+    line-height: 1.7;
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.footer-section a:hover {
+    color: var(--dorado-claro);
+    transform: translateX(4px);
+}
+
+/* Parte inferior */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1250px;
+    margin: auto;
+    padding: 22px 30px;
+    border-top: 1px solid #ffffff20;
+}
+
+.footer-bottom p {
+    color: #ffffff9c;
+    font-size: 12px;
+}
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+    header {
+        padding: 12px 2%;
+    }
+
+    nav a {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .split {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .split > div {
+        grid-column: 1 / -1;
+    }
+
+    .grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+/* =====================================================
+   MÓVILES
+===================================================== */
+
+@media (max-width: 600px) {
+    header {
+        position: relative;
+        padding: 13px 10px;
+    }
+
+    header nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .page-header {
+        padding: 48px 18px 40px;
+    }
+
+    .page-header h1 {
+        font-size: clamp(34px, 10vw, 48px);
+    }
+
+    .page-header > p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .empresa-imagen {
+        height: 270px;
+        margin-top: 30px;
+        border-width: 3px;
+        border-radius: 19px;
+    }
+
+    .imagen-texto {
+        padding: 22px;
+    }
+
+    .imagen-texto span {
+        font-size: 23px;
+        letter-spacing: 1.5px;
+    }
+
+    .imagen-texto small {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .content {
+        padding: 15px 17px 65px;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-bottom: 65px;
+    }
+
+    .split > div {
+        grid-column: auto;
+        padding: 23px 20px;
+    }
+
+    .split > div p {
+        font-size: 22px;
+    }
+
+    .image-box {
+        height: 210px;
+    }
+
+    .card-content {
+        padding: 23px 21px 26px;
+    }
+
+    .card-content h2 {
+        font-size: 27px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .section-heading p {
+        font-size: 14px;
+    }
+
+    .grid.four {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .value-image {
+        height: 235px;
+    }
+
+    .value-content {
+        padding: 22px;
+    }
+
+    .value-content h3 {
+        font-size: 24px;
+    }
+
+    .value-content p {
+        font-size: 14px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 42px 23px 35px;
+    }
+
+    .footer-brand {
+        gap: 14px;
+    }
+
+    .footer-logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .footer-brand h3 {
+        font-size: 22px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px 18px;
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   ACCESIBILIDAD
+===================================================== */
+
+a:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
