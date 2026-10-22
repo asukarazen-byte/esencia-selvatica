@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Auditoría de imagen corporativa de Esencia Selvática, Estrategia 2026.">
+    <meta name="theme-color" content="#176b3a">
+
+    <title>Auditoría de Imagen | Esencia Selvática</title>
+
+    <link href="css/audiroria imagen.css" rel="stylesheet" type="text/css">
+
+    <style>
+        :root {
+            --verde-oscuro: #092b1a;
+            --verde: #176b3a;
+            --verde-medio: #2f8b4b;
+            --verde-claro: #79b85a;
+            --dorado: #d7ae3f;
+            --crema: #fff8e7;
+            --blanco: #ffffff;
+            --texto: #344239;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--crema);
+            color: var(--texto);
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        /* ENCABEZADO PRINCIPAL */
+
+        .hero-auditoria {
+            min-height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 7%;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(90deg, rgba(9,43,26,.92), rgba(23,107,58,.68)),
+                url("imagen/portada-auditoria.jpg") center/cover no-repeat;
+        }
+
+        .hero-contenido {
+            max-width: 900px;
+        }
+
+        .hero-contenido .etiqueta {
+            color: #f5d978;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .hero-contenido h1 {
+            margin: 15px 0;
+            font-size: clamp(35px, 6vw, 65px);
+            line-height: 1.12;
+        }
+
+        .hero-contenido p {
+            font-size: 21px;
+        }
+
+        .hero-contenido .eslogan {
+            color: #f5d978;
+            font-style: italic;
+        }
+
+        /* ESTRUCTURA GENERAL */
+
+        .contenedor {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+        .seccion {
+            padding: 75px 0;
+            scroll-margin-top: 30px;
+        }
+
+        .seccion-blanca {
+            background: white;
+        }
+
+        .titulo-seccion {
+            max-width: 800px;
+            margin: 0 auto 35px;
+            text-align: center;
+        }
+
+        .titulo-seccion span {
+            color: var(--verde-medio);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .titulo-seccion h2 {
+            color: var(--verde-oscuro);
+            font-size: clamp(27px, 4vw, 40px);
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .titulo-seccion p {
+            max-width: 720px;
+            margin: auto;
+        }
+
+        h3 {
+            color: var(--verde);
+            margin-top: 0;
+        }
+
+        /* IMAGEN DESTACADA */
+
+        .imagen-destacada {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            min-height: 320px;
+            background: #dce8d6;
+            margin: 30px 0;
+        }
+
+        .imagen-destacada img {
+            display: block;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .imagen-destacada:hover img {
+            transform: scale(1.04);
+        }
+
+        .imagen-destacada figcaption {
+            padding: 14px 20px;
+            background: var(--verde-oscuro);
+            color: white;
+            font-size: 14px;
+        }
+
+        /* GALERÍA DE IMÁGENES */
+
+        .galeria {
+            display: grid;
+
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin: 30px 0;
+        }
+
+        .galeria-dos {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .foto-card {
+            overflow: hidden;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(9,43,26,.09);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .foto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(9,43,26,.15);
+        }
+
+        .foto-card img {
+            width: 100%;
+            height: 290px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .foto-card-contenido {
+            padding: 20px;
+        }
+
+        .foto-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .foto-card p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        /* BLOQUES DE INFORMACIÓN */
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .tarjeta {
+            padding: 28px;
+            background: white;
+            border-radius: 18px;
+            border-left: 5px solid var(--verde-medio);
+            box-shadow: 0 7px 22px rgba(9,43,26,.07);
+        }
+
+        .tarjeta p {
+            margin-bottom: 0;
+        }
+
+        .numero {
+            color: var(--dorado);
+            font-size: 35px;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .lista-visual {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .lista-visual li {
+            padding: 16px 18px;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid var(--dorado);
+        }
+
+        /* MENSAJE DESTACADO */
+
+        .mensaje-verde {
+            background: var(--verde-oscuro);
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .mensaje-verde h3 {
+            color: #f5d978;
+        }
+
+        .mensaje-verde p {
+            margin-bottom: 0;
+        }
+
+        /* TABLAS */
+
+        .tabla-contenedor {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 14px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(9,43,26,.07);
+        }
+
+        table {
+            width: 100%;
+            min-width: 500px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e9df;
+        }
+
+        th {
+            color: white;
+            background: var(--verde);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f5f8f1;
+        }
+
+        /* CONCLUSIONES */
+
+        .conclusiones {
+            background: linear-gradient(135deg, #092b1a, #176b3a);
+            color: white;
+        }
+
+        .conclusiones .titulo-seccion h2 {
+            color: white;
+        }
+
+        .conclusiones .titulo-seccion span {
+            color: #f5d978;
+        }
+
+        .conclusion-card {
+            height: 100%;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 16px;
+            background: rgba(255,255,255,.08);
+        }
+
+        .conclusion-card h3 {
+            color: #f5d978;
+        }
+
+        /* PIE DE PÁGINA */
+
+        .pie-pagina {
+            padding: 30px 5%;
+            text-align: center;
+            color: white;
+            background: #061c11;
+        }
+
+        .pie-pagina strong {
+            color: #f5d978;
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+
+        @media (max-width: 850px) {
+            .galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .rejilla {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-card img {
+                height: 250px;
+            }
+
+            .hero-auditoria {
+                min-height: 380px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .galeria,
+            .galeria-dos,
+            .lista-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .seccion {
+                padding: 50px 0;
+            }
+
+            .imagen-destacada img {
+                height: 280px;
+            }
+
+            .foto-card img {
+                height: 270px;
+            }
+
+            .tarjeta,
+            .foto-card-contenido {
+                padding: 20px;
+            }
+
+            .hero-contenido p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN: CONSERVADO -->
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="publico.html">Público objetivo</a>
+            <a href="identidad-corporativa.html">Identidad corporativa</a>
+            <a href="identidad-visual.html">Identidad visual</a>
+            <a href="imagen-institucional.html">Imagen institucional</a>
+            <a href="aplicaciones.html">Aplicaciones</a>
+            <a href="comunicacion.html">Comunicación</a>
+            <a href="manual-identidad.html">Manual de identidad</a>
+            <a href="propuestas-mejora.html">Propuestas de mejora</a>
+            <a href="Plan de Comunicacion Corporativa.html">Plan de comunicación corporativa</a>
+            <a href="auditoria imagen .html" class="active">Auditoría de imagen</a>
+        </nav>
+    </header>
+
+    <!-- PORTADA -->
+
+    <header class="hero-auditoria">
+        <div class="hero-contenido">
+            <p class="etiqueta">Identidad corporativa · Estrategia 2026</p>
+            <h1>Auditoría de Imagen</h1>
+            <p>Esencia Selvática</p>
+            <p class="eslogan">“Gotas de sabor amazónico”</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- INTRODUCCIÓN -->
+
+        <section class="seccion">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>Presentación</span>
+                    <h2>La esencia de nuestra identidad</h2>
+                    <p>
+                        Una auditoría para evaluar cómo se presenta Esencia Selvática
+                        y cómo comunica la riqueza natural de la Amazonía peruana.
+                    </p>
+                </div>
+
+                <figure class="imagen-destacada">
+                    <img src="imagen/portada-auditoria.jpg"
+                         alt="Presentación visual de Esencia Selvática">
+                    <figcaption>
+                        Esencia Selvática: inspiración amazónica, creatividad e identidad.
+                    </figcaption>
+                </figure>
+
+                <div class="rejilla">
+                    <article class="tarjeta">
+                        <div class="numero">01</div>
+                        <h3>¿Qué investigaremos?</h3>
+                        <p>
+                            La identidad visual, los envases, las etiquetas,
+                            la comunicación y la percepción del público.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="numero">02</div>
+                        <h3>¿Para qué?</h3>
+                        <p>
+                            Para reconocer fortalezas, detectar aspectos por mejorar
+                            y proponer una imagen más uniforme y reconocible.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. NECESIDAD DE LA INVESTIGACIÓN -->
+
+        <section class="seccion seccion-blanca" id="investigacion">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>01 · Investigación</span>
+                    <h2>Necesidad de la investigación</h2>
+                    <p>
+                        Conocer la percepción de los consumidores y comprobar
+                        si la imagen refleja la personalidad de la marca.
+                    </p>
+                </div>
+
+                <div class="galeria">
+                    <article class="foto-card">
+                        <img src="imagen/cocona.jpg" alt="Fruta amazónica cocona">
+                        <div class="foto-card-contenido">
+                            <h3>Frutas amazónicas</h3>
+                            <p>Inspiración natural para desarrollar productos con identidad propia.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/maracuya.jpg" alt="Fruta de maracuyá">
+                        <div class="foto-card-contenido">
+                            <h3>Variedad de aromas</h3>
+                            <p>Cocona, maracuyá, camu camu, aguaje, copoazú y guanábana.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/productos.jpg" alt="Productos y frascos de esencias">
+                        <div class="foto-card-contenido">
+                            <h3>Presentación del producto</h3>
+                            <p>Envases y etiquetas que deben comunicar confianza y calidad.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <h3>Objetivo general</h3>
+                <p>
+                    Evaluar la imagen corporativa para identificar mejoras que
+                    fortalezcan la identidad y el reconocimiento de la marca.
+                </p>
+
+                <h3>Objetivos específicos</h3>
+                <ul class="lista-visual">
+                    <li>Analizar logotipo, colores, tipografía y etiquetas.</li>
+                    <li>Conocer la opinión de clientes actuales y potenciales.</li>
+                    <li>Evaluar redes sociales, WhatsApp Business y materiales impresos.</li>
+                    <li>Identificar fortalezas, debilidades, oportunidades y amenazas.</li>
+                    <li>Proponer una identidad uniforme y diferenciada.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. PROCESO DE AUDITORÍA -->
+
+        <section class="seccion" id="proceso">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>02 · Evaluación</span>
+                    <h2>Proceso de auditoría de la imagen</h2>
+                    <p>
+                        Cinco etapas para revisar la identidad, la presentación
+                        de los productos y la comunicación de la marca.
+                    </p>
+                </div>
+
+                <div class="galeria">
+                    <article class="foto-card">
+                        <img src="imagen/identidad-visual.jpg" alt="Diseño de identidad visual">
+                        <div class="foto-card-contenido">
+                            <h3>1. Identidad corporativa</h3>
+                            <p>Revisar logotipo, paleta, tipografía, eslogan y aplicaciones.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/encuestas.jpg" alt="Investigación y encuestas">
+                        <div class="foto-card-contenido">
+                            <h3>2. Percepción del público</h3>
+                            <p>Recoger opiniones mediante encuestas y entrevistas.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/etiquetas.jpg" alt="Diseño de etiquetas y envases">
+                        <div class="foto-card-contenido">
+                            <h3>3. Imagen externa</h3>
+                            <p>Evaluar etiquetas, envases, catálogo y materiales promocionales.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/competencia.jpg" alt="Comparación de propuestas de diseño">
+                        <div class="foto-card-contenido">
+                            <h3>4. Análisis de competencia</h3>
+                            <p>Comparar presentación, información y diferenciación de marca.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/propuestas.jpg" alt="Propuestas de diseño y mejora">
+                        <div class="foto-card-contenido">
+                            <h3>5. Diagnóstico y mejoras</h3>
+                            <p>Priorizar acciones basadas en la información recopilada.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/catalogo.jpg" alt="Catálogo visual de productos">
+                        <div class="foto-card-contenido">
+                            <h3>Aplicaciones de marca</h3>
+                            <p>Revisar catálogos, tarjetas, afiches, web y redes sociales.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mensaje-verde">
+                    <h3>Paleta cromática propuesta</h3>
+                    <p>
+                        Verde Selva #0F5A29 · Verde Lima #62A233 ·
+                        Amarillo Frutal #F3BA22 · Marrón Tierra #5C2513.
+                        Se revisará su aplicación uniforme en las piezas gráficas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PLAN DE INVESTIGACIÓN -->
+
+        <section class="seccion seccion-blanca" id="plan">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>03 · Planificación</span>
+                    <h2>Desarrollo del plan de investigación</h2>
+                    <p>
+                        Se propone un estudio para comprobar la coherencia
+                        de la imagen y la claridad de los mensajes.
+                    </p>
+                </div>
+
+                <figure class="imagen-destacada">
+                    <img src="imagen/plan-investigacion.jpg"
+                         alt="Planificación de una investigación de marca">
+                    <figcaption>
+                        Investigación, análisis y organización de la información.
+                    </figcaption>
+                </figure>
+
+                <div class="rejilla">
+                    <article class="tarjeta">
+                        <h3>Planteamiento del problema</h3>
+                        <p>
+                            Determinar si la imagen proyectada es coherente con
+                            la identidad deseada y facilita el reconocimiento.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Metodología</h3>
+                        <p>
+                            Enfoque mixto que combina encuestas, entrevistas,
+                            observación directa y análisis de canales digitales.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Población y muestra</h3>
+                        <p>
+                            Clientes actuales y potenciales, familias, jóvenes,
+                            adultos y emprendedores gastronómicos. Como ejemplo
+                            académico, se propone encuestar a 30 personas.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Actividades principales</h3>
+                        <p>
+                            Definir objetivos, diseñar instrumentos, recopilar
+                            información, analizar resultados y proponer mejoras.
+                        </p>
+                    </article>
+                </div>
+
+                <h3 style="margin-top:45px;">Cronograma de actividades</h3>
+
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Semana</th>
+                                <th>Actividad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Semana 1</td>
+                                <td>Planificación y diseño de instrumentos.</td>
+                            </tr>
+                            <tr>
+                                <td>Semana 2</td>
+                                <td>Encuestas, entrevistas y observación.</td>
+                            </tr>
+                            <tr>
+                                <td>Semana 3</td>
+                                <td>Organización e interpretación de la información.</td>
+                            </tr>
+                            <tr>
+                                <td>Semana 4</td>
+                                <td>Informe final y propuestas de mejora.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mensaje-verde">
+                    <h3>Resultados esperados</h3>
+                    <p>
+                        Conocer la percepción del público, evaluar la coherencia
+                        visual e identificar oportunidades de diferenciación.
+                        Estos resultados deberán confirmarse con la investigación real.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. AUTOANÁLISIS -->
+
+        <section class="seccion" id="autoanalisis">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>04 · Diagnóstico interno</span>
+                    <h2>Proceso de autoanálisis de la imagen</h2>
+                    <p>
+                        Revisar cómo se presenta la marca y si sus recursos
+                        gráficos y mensajes son coherentes.
+                    </p>
+                </div>
+
+                <div class="galeria galeria-dos">
+                    <article class="foto-card">
+                        <img src="imagen/redes-sociales.jpg" alt="Diseño de publicaciones para redes sociales">
+                        <div class="foto-card-contenido">
+                            <h3>Comunicación digital</h3>
+                            <p>
+                                Comprobar la uniformidad de Facebook, Instagram,
+                                WhatsApp Business y la página web.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/fotografia-productos.jpg" alt="Fotografía de productos">
+                        <div class="foto-card-contenido">
+                            <h3>Fotografía de productos</h3>
+                            <p>
+                                Revisar iluminación, claridad, calidad visual
+                                y presentación de los frascos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mensaje-verde">
+                    <h3>Mensaje de marca</h3>
+                    <p>
+                        “El auténtico sabor y aroma de la selva en tus preparaciones”.
+                    </p>
+                </div>
+
+                <h3>Fortalezas y debilidades por verificar</h3>
+
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fortalezas potenciales</th>
+                                <th>Aspectos por revisar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Inspiración en la biodiversidad amazónica.</td>
+                                <td>Uniformidad de las aplicaciones gráficas.</td>
+                            </tr>
+                            <tr>
+                                <td>Variedad de aromas inspirados en frutas.</td>
+                                <td>Coherencia entre canales físicos y digitales.</td>
+                            </tr>
+                            <tr>
+                                <td>Paleta cromática e identidad visual propuestas.</td>
+                                <td>Reconocimiento de la marca en nuevos mercados.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="margin-top:40px;">Oportunidades y amenazas</h3>
+
+                <div class="rejilla">
+                    <article class="tarjeta">
+                        <h3>Oportunidades</h3>
+                        <ul>
+                            <li>Difusión en redes sociales y página web.</li>
+                            <li>Experiencias gastronómicas creativas.</li>
+                            <li>Aplicaciones en envases, etiquetas y catálogos.</li>
+                        </ul>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Amenazas</h3>
+                        <ul>
+                            <li>Competencia de marcas posicionadas.</li>
+                            <li>Saturación de publicidad en redes sociales.</li>
+                            <li>Cambios en las preferencias del consumidor.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROPUESTAS DE MEJORA -->
+
+        <section class="seccion seccion-blanca" id="mejoras">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>Acciones propuestas</span>
+                    <h2>Propuestas de mejora</h2>
+                    <p>
+                        Acciones para fortalecer la presentación y el reconocimiento
+                        de Esencia Selvática.
+                    </p>
+                </div>
+
+                <div class="galeria">
+                    <article class="foto-card">
+                        <img src="imagen/mejora-logotipo.jpg" alt="Aplicación coherente del logotipo">
+                        <div class="foto-card-contenido">
+                            <h3>Unificar la identidad</h3>
+                            <p>Aplicar correctamente logotipo, colores y tipografías.</p>
+                        </div>
+                    </article>
+
+                    <article class="foto-card">
+                        <img src="imagen/mejora-fotografia.jpg" alt="Fotografía profesional de productos">
+                        <div class="foto-card-contenido">
+                            <h3>Mejorar las fotografías</h3>
+                            <p>Mostrar los productos con imágenes claras y atractivas.</p>
+                        </div>
+                    </article>
+
+
+                    <article class="foto-card">
+                        <img src="imagen/mejora-catalogo.jpg" alt="Diseño de catálogo de productos">
+                        <div class="foto-card-contenido">
+                            <h3>Actualizar los materiales</h3>
+                            <p>Revisar catálogo, etiquetas y publicaciones digitales.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <ul class="lista-visual">
+                    <li>Crear plantillas gráficas uniformes.</li>
+                    <li>Actualizar la información de los canales digitales.</li>
+                    <li>Registrar consultas e interacciones del público.</li>
+                    <li>Evaluar los avances al finalizar tres meses.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. CONCLUSIONES -->
+
+        <section class="seccion conclusiones" id="conclusiones">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span>05 · Cierre</span>
+                    <h2>Conclusiones</h2>
+                    <p>
+                        La auditoría permitirá orientar futuras decisiones
+                        de identidad y comunicación corporativa.
+                    </p>
+                </div>
+
+                <div class="galeria">
+                    <article class="conclusion-card">
+                        <h3>Identidad coherente</h3>
+                        <p>
+                            La marca debe reflejar la riqueza natural amazónica
+                            mediante colores, tipografía, fotografías y envases.
+                        </p>
+                    </article>
+
+                    <article class="conclusion-card">
+                        <h3>Investigación real</h3>
+                        <p>
+                            Las encuestas, entrevistas y observaciones permitirán
+                            conocer la percepción del público.
+                        </p>
+                    </article>
+
+                    <article class="conclusion-card">
+                        <h3>Mejora continua</h3>
+                        <p>
+                            Las recomendaciones finales deberán basarse en los
+                            resultados obtenidos y en la revisión periódica
+                            de las aplicaciones de la marca.
+                        </p>
+                    </article>
+                </div>
+
+                <figure class="imagen-destacada">
+                    <img src="imagen/cierre-esencia.jpg"
+                         alt="Imagen final de Esencia Selvática">
+                    <figcaption>
+                        Esencia Selvática · Gotas de sabor amazónico.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p><strong>ESENCIA SELVÁTICA</strong></p>
+        <p>Auditoría de Imagen Corporativa · Estrategia 2026</p>
+        <p>“Gotas de sabor amazónico”</p>
+    </footer>
+
+</body>
+</html>
+```
